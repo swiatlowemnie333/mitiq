@@ -260,5 +260,5 @@ def compute_expectation_value_with_estimator(circuit, obs, backend_options=None)
     """Computes expectation value using Estimator."""
     from functools import partial
     from mitiq.interface.mitiq_qiskit import Executor
-    func = partial(execute_with_estimator, circuit=circuit, obs=obs, backend_options=backend_options)
+    func = partial(\n        execute_with_estimator, circuit=circuit, obs=obs, backend_options=backend_options\n    )
     return Executor(func)(circuit)
